@@ -1,14 +1,16 @@
 import React from "react"
-import Counter from "./Counter"
+import Counter,{Component} from "./Counter"
 
 
-const Player = (props) => {
+class Player extends React.Component  {
+    render() {
     return (
       <div className="player">
         <span className="player-name"> {props.name} </span>
         <Counter score={props.score}/>
       </div>
     )
+    }
   }
 
   export default Player
