@@ -1,12 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import Player from "./Player"
+import Header from "./Header"
+
 
 function App() {
   return (
-    <div className="App">
-      <p>HelloWorld</p>
+    <div className="scoreboard">
+      <Header/>
+      <Player/>
     </div>
   );
 }
 
 export default App;
+
+
