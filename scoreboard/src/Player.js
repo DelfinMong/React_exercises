@@ -1,15 +1,12 @@
 import React from "react"
+import Counter from "./Counter"
 
 
-const Player = () => {
+const Player = (props) => {
     return (
       <div className="player">
-        <span className="player-name"> Guil </span>
-        <div className="counter">
-          <buttom className="counter-action decrement"> - </buttom>
-          <buttom className="counter-score"> 35 </buttom>
-          <buttom className="counter-action increment"> + </buttom>
-        </div>
+        <span className="player-name"> {props.name} </span>
+        <Counter score={props.score}/>
       </div>
     )
   }
