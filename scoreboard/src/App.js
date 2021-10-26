@@ -1,22 +1,27 @@
 import './App.css';
 import Player from "./Player"
 import Header from "./Header"
-
+import InitiaPlayers from "./InitiaPlayers"
 
 
 function App() {
+
+  const playerCount = InitiaPlayers.length
+
   return (
     <div className="scoreboard">
       <Header 
         title="Scoreboard" 
-        totalPlayer={1}
+        totalPlayer={playerCount}
       />
 
       {/* Players list */}
-      <Player name="Guil" score={50}/>
-      <Player name="Treasure" score={90}/>
-      <Player name="Ashley" score={85}/>
-      <Player name="James" score={80}/>
+
+      {InitiaPlayers.map(player => 
+        <Player key={player.id.toString()} name={player.name} score={player.score} />
+      )
+      }
+     
     </div>
   );
 }
