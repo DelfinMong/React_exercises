@@ -18,7 +18,10 @@ function App() {
       {/* Players list */}
 
       {InitiaPlayers.map(player => 
-        <Player key={player.id.toString()} name={player.name} score={player.score} />
+        <Player 
+          key={player.id.toString()} 
+          name={player.name} 
+          score={player.score} />
       )
       }
      
