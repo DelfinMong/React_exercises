@@ -1,9 +1,8 @@
 import './App.css';
 import Player from "./Player"
 import Header from "./Header"
-import InitiaPlayers from "./InitiaPlayers"
+// import InitiaPlayers from "./InitiaPlayers"
 import React, {Component} from 'react';
-
 
 class App extends Component {
      state = {
