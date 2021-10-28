@@ -17,7 +17,8 @@ class Counter extends React.Component {
 export default Counter;
 
 // { binding }
-// onClick={this.incrementScore.bind(this)}
+// this.incrementScore.bind(this)
+// this.incrementScore = {this.incrementScore.bind(this)}  force biding
 // onClick={() => this.incrementScore()}
 // use arrow function handling events ( need to bind this)
 

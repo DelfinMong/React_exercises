@@ -1,6 +1,7 @@
 import './App.css';
 import Player from "./Player"
 import Header from "./Header"
+import AddPlayerForm from './AddPlayerForm';
 // import InitiaPlayers from "./InitiaPlayers"
 import React, {Component} from 'react';
 
@@ -50,7 +51,7 @@ class App extends Component {
   
   render(){
     return (
-      <div className="scoreboard">
+    <div className="scoreboard">
        <Header
           title="Scoreboard" 
           players={this.state.players}
@@ -71,7 +72,7 @@ class App extends Component {
           />
         )
         }
-       
+        <AddPlayerForm/>
     </div>
       )
     }
