@@ -17,9 +17,9 @@ const App = () => (
         <div className="container">
             <Header/>
             <Route exact path="/" component={Home}/>
-            <Route path="/about" component={About}/>
+            <Route path="/about" render={ () => <About title="About"/>}/>
             <Route path="/teachers" component={Teachers}/>
-            <Route path="course" component={Course}/>
+            <Route path="/course" component={Course}/>
         </div>
       </BrowserRouter>
 )
