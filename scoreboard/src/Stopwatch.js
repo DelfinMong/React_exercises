@@ -33,6 +33,10 @@ class Stopwatch extends Component {
         }
     }
 
+    componentWillUnmount() {
+        clearInterval(this.intervalID);
+     }
+
     handleReset = () => {
         this.setState({
             elapsedTime: 0
