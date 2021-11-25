@@ -10,10 +10,8 @@ class App extends Component {
         <div className="App">
           <Die face="six"/>
           <Die face="five"/>
-          <Die face="four"/>
           <Die face="three"/>
           <Die face="two"/>
-          <Die face="one"/>
         </div>
       )
   }
