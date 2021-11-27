@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import RollDice from './RollDice';
 import './App.css';
-import Die from './Die'
+
 
 
 
