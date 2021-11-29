@@ -9,16 +9,23 @@ class Lottery extends Component {
     constructor(){
         super(props);
         this.state = {
-            nums: []
-        }
+            nums: Array.length({length:this.props.maxBalls})
+        };
+    }
+    generate(){
+
+    }
+    handleClick () {
+
     }
     render() {
         return (
            <section className="Lottery">
             <h1>{this.props.title}</h1>
             <div>
-
+                Balls go here!
             </div>
+            <button onClick={this.handleClick}>Generate</button>
            </section> 
         )
     }
