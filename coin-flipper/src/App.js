@@ -1,10 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import CoinContainer from './CoinContainer';
 
 function App() {
   return (
     <div className="App">
-      Coin Flipper
+      <CoinContainer/>
     </div>
   );
 }
