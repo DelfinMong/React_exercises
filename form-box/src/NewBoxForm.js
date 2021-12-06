@@ -6,14 +6,20 @@ class NewBoxForm extends Component {
         this.state = {
             height: '',
             width: '',
-            colot:''
+            colot:'',
         }
+        this.handleChange = this.handleChange.bind(this);
     }
+    handleChange(evt){
+        this.setState({
+            [evt.target.name] : evt.target.value
+        })
+    };
     render(){
         return(
             <form>
                 <div>
-                    <label>Height</label>
+                    <label htmlFor="height">Height</label>
                     <input 
                       type='text'
                       name='height'
