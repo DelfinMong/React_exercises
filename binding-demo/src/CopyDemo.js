@@ -1,7 +1,9 @@
 import React,{ Component } from 'react'
 
 class CopyDemo extends Component {
-   
+    handleCopy(){
+        alert('stop stealing from me');
+    }
     render(){
         return(
             <div>
