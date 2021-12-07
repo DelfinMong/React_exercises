@@ -10,13 +10,22 @@ class ButtonList extends Component {
         this.state = { color: 'cyan'};
     }
     
-    changeColor(color){}
+    changeColor(newColor){
+        this.setState({ color: newColor})
+    }
+
     render(){
         return(
             <div className="ButtonList" style={{backgroundColor: this.state.color}}>
               {this.props.colors.map( c => { 
                 const colorObj = {background: c};
-                return <button style={colorObj}>CLICK ME</button>
+                return <button 
+                            style={colorObj} 
+                            // onClick={this.changeColor.bind(this,c)}
+                            onClick={() => this.changeColor(c)}
+                        >
+                           CLICK ME
+                       </button>
               })}
             </div>
         )
