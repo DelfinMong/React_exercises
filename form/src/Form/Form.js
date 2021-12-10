@@ -9,7 +9,9 @@ class Form extends Component {
     }
 
     handleChange(evt){
-        this.setState({ username : evt.target.value })
+        this.setState({ 
+            username : evt.target.value 
+        })
     }
 
     handleSubmit(evt){
@@ -22,11 +24,15 @@ class Form extends Component {
             <div>
              <h1>Form Demo</h1>
              <form onSubmit={this.handleSubmit}>
+                 <label htnlFor='username'>Username</label>
+                 <br/><br/>
                  <input 
                     type='text' 
+                    id='username'
                     value={this.state.username} 
                     onChange={this.handleChange}/>
              </form>
+             <br/>
              <button>Submit</button>
             </div>
         )

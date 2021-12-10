@@ -9,7 +9,9 @@ class MultiForm extends Component {
     }
 
     handleChange(evt){
-        this.setState({ username : evt.target.value })
+        this.setState({ 
+            [evt.target.name] : evt.target.value
+        })
     }
 
     handleSubmit(evt){
@@ -25,6 +27,7 @@ class MultiForm extends Component {
                  <input 
                     type='text'
                     placeholder='username' 
+                    name='username'
                     value={this.state.username} 
                     onChange={this.handleChange}
                  />
@@ -32,12 +35,14 @@ class MultiForm extends Component {
                   <input 
                     type='email'
                     placeholder='email' 
+                    name="email"
                     value={this.state.email} 
                     onChange={this.handleChange}
                  /><br/> <br/>
                   <input 
                     type='password'
                     placeholder="password" 
+                    name='password'
                     value={this.state.password} 
                     onChange={this.handleChange}
                  />
