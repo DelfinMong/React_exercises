@@ -10,6 +10,12 @@ class ShoppingList extends Component {
                {name: 'Bread', qty: '2 loaves'}
            ]
        }
+       this.addItem = this.addItem.bind(this)
+   }
+   addItem(item){
+        this.setState(state =>({
+            items: [...state.items,item]
+        }))
    }
     render(){
         return(
@@ -21,7 +27,7 @@ class ShoppingList extends Component {
                       </li>
                   ))}
               </ul>
-              <ShoppingListForm />
+              <ShoppingListForm addItem={this.addItem}/>
 
             </div>
         )
