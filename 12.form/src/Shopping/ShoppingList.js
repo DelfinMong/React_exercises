@@ -14,8 +14,9 @@ class ShoppingList extends Component {
        this.addItem = this.addItem.bind(this)
    }
    addItem(item){
-        this.setState(state =>({
-            items: [...state.items,item]
+       let newItem = { ...item, id:uuid() }
+       this.setState(state =>({
+            items: [...state.items, newItem]
         }))
    }
     render(){
