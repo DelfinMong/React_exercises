@@ -5,10 +5,10 @@ import TodoList from './TodoList';
 class Todo extends Component {
     render(){
        return (
-        <div className="">
+        <div>
           <button>Edit</button>
-          <button>x</button>
-          <li>{TodoList.props.task}</li>
+          <button>X</button>
+          <li>{this.props.task}</li>
         </div>
        );
     }
