@@ -7,11 +7,11 @@ class Todo extends Component {
         super(props);
         this.state = { 
             isEditing: false,
-            task: ''
+            task: this.props.task
         }
         this.handleRemove = this.handleRemove.bind(this)
         this.toggleForm = this.toggleForm.bind(this)
-        this.handleUpdate = this.handleUpdate(this)
+        this.handleUpdate = this.handleUpdate.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
     handleRemove(){
@@ -20,15 +20,17 @@ class Todo extends Component {
     toggleForm(){
         this.setState({ isEditing: !this.state.isEditing})
     }
+    handleUpdate(evt){
+        evt.preventDefault();
+        this.props.updateTodo(this.props.id, this.state.task);
+        this.setState({ isEditing: false});
+    }
     handleChange(evt){
         this.setState({
             // only have one thing changing.
-            task : evt.target.value
-            // [evt.target.name] : evt.target.value
-        })
-    }
-    handleUpdate(evt){
-        evt.preventDefault()
+            // task : evt.target.value
+            [evt.target.name] : evt.target.value
+        });
     }
 
     render(){
