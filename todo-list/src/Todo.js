@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TodoList from './TodoList';
+import "./Todo.css";
 
 
 class Todo extends Component {
@@ -13,6 +14,7 @@ class Todo extends Component {
         this.toggleForm = this.toggleForm.bind(this)
         this.handleUpdate = this.handleUpdate.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        this.handleToggle = this.handleToggle.bind(this)
     }
     handleRemove(){
         this.props.removeTodo(this.props.id)
@@ -31,6 +33,9 @@ class Todo extends Component {
             // task : evt.target.value
             [evt.target.name] : evt.target.value
         });
+    }
+    handleToggle(evt){
+        this.props.toggleTodo(this.props.id)
     }
 
     render(){
@@ -54,7 +59,9 @@ class Todo extends Component {
             <div>
                 <button onClick={this.toggleForm}>Edit</button>
                 <button onClick={this.handleRemove}>X</button>
-                <li>{this.props.task}</li>
+                <li className={this.props.completed ? "completed" : " "} onClick={this.handleToggle}>
+                    {this.props.task}
+                </li>
             </div>
            )
        }
