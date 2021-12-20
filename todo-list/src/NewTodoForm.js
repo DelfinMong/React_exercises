@@ -3,11 +3,7 @@ import React, { Component } from 'react';
 class NewTodoForm extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            todos: [
-                { task:''},
-            ]
-        }
+        this.state = {task:''}
         this.handleChange = this.handleChange.bind(this)
     }
     handleChange(evt){
@@ -15,12 +11,23 @@ class NewTodoForm extends Component {
             [evt.target.name] : evt.target.value
         })
     }
+    handleSubmit(evt){
+        evt.preventDefault()
+    }
     render(){
        return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label htmlFor='task'>New Todo</label>
-                    <input type='text' placeholder='New Todo' id='task'/>
+                    <input 
+                       type='text' 
+                       placeholder='New Todo' 
+                       id='task'
+                       name='task'
+                       value={this.state.task}
+                       onChange={this.handleChange}
+                    />
+                    <button>Add Todo</button>
                 </form>
             </div>
        );
