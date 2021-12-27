@@ -19,9 +19,6 @@ class Todo extends Component {
     handleRemove(){
         this.props.removeTodo(this.props.id)
     }
-    toggleForm(){
-        this.setState({ isEditing: !this.state.isEditing})
-    }
     handleUpdate(evt){
         evt.preventDefault();
         this.props.updateTodo(this.props.id, this.state.task);
@@ -34,15 +31,19 @@ class Todo extends Component {
             [evt.target.name] : evt.target.value
         });
     }
+    toggleForm(){
+        this.setState({ isEditing: !this.state.isEditing})
+    }
     handleToggle(evt){
         this.props.toggleTodo(this.props.id)
     }
+   
 
     render(){
        let result;
        if(this.state.isEditing){
             result = (
-                <div>
+                <div className="Todo">
                   <form onSubmit={this.handleUpdate}>
                       <input 
                          type="text" 
@@ -56,12 +57,12 @@ class Todo extends Component {
             )
        } else {
            result = (
-            <div>
-                <button onClick={this.toggleForm}>Edit</button>
-                <button onClick={this.handleRemove}>X</button>
-                <li className={this.props.completed ? "completed" : " "} onClick={this.handleToggle}>
+            <div className="Todo">
+                 <li className={this.props.completed ? "Todo-task completed" : "Todo-task"} onClick={this.handleToggle}>
                     {this.props.task}
                 </li>
+                <button onClick={this.toggleForm}>Edit</button>
+                <button onClick={this.handleRemove}>X</button>
             </div>
            )
        }
