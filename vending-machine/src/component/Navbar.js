@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import "./Navbar.css";
+import "../css/Navbar.css";
 
 class Navbar extends Component {
   render() {
     return (
-      <div className='Navbar'>
-        <NavLink exact activeClassName='Navbar-active' to='/'>
+      <div className={({ isActive }) => isActive ? "Navbar": " "}>
+        <NavLink className={({ isActive }) => isActive ? "Navbar": " "}to='/'>
           Home
         </NavLink>
-        <NavLink exact activeClassName='Navbar-active' to='/chips'>
+        <NavLink className={({ isActive }) => isActive ? "Navbar": " "}to='/chips'>
           Chips
         </NavLink>
-        <NavLink exact activeClassName='Navbar-active' to='/soda'>
+        <NavLink className={({ isActive }) => isActive ? "Navbar": " "}to='/soda'>
           Soda
         </NavLink>
-        <NavLink exact activeClassName='Navbar-active' to='/sardines'>
+        <NavLink className={({ isActive }) => isActive ? "Navbar": " "}to='/sardines'>
           Sardines
         </NavLink>
       </div>
