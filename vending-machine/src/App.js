@@ -12,9 +12,9 @@ class App extends Component{
       <div className="App">
         <Routes>
           <Route path='/' element={<VendingMachine />} />
-          <Route path='' element={<Chips />} />
-          <Route path='' element={<Sardines />} />
-          <Route path='' element={<Soda />} />
+          <Route path='/soda' element={<Soda />} />
+          <Route path='/sardines' element={<Sardines />} />
+          <Route path='/chips' element={<Chips />} />
         </Routes>
       </div>
     );
