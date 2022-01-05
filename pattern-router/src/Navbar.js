@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import "./Navbar.css";
 
 class Navbar extends Component {
@@ -21,5 +21,7 @@ class Navbar extends Component {
     );
   }
 }
-// export default withRouter(Navbar);
-export default Navbar
+export default withRouter(Navbar);
+// export default Navbar
+
+// withRouter use for components with out routes. 
