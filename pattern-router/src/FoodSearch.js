@@ -26,7 +26,7 @@ class FoodSearch extends Component {
           placeholder='search for a food'
           value={this.state.query}
           onChange={this.handleChange}
-        />
+        /> 
         <Link to={`/food/${this.state.query}`}>Go!</Link>
         <button onClick={this.handleClick}>Save New Food!</button>
       </div>
