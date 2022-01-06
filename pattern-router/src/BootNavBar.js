@@ -1,7 +1,15 @@
 import Reat, { Component} from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Navbar extends Component {
   render(){
+    const dogLinks = this.props.dogs.map( dog => (
+      <li>
+      <NavLink exact to={`/dogs/${dog.name}`} className='nav-link' key={dog.name}>
+         {dog.name}
+      </NavLink>
+      </li>
+    ))
     return(
     <nav className='navbar Navbar-expand-lg navbar-dark bg-dark'>
       <a className='navbar-brand' href='#'>
@@ -20,8 +28,12 @@ class Navbar extends Component {
       </button>
       <div className='collapse navbar-collapse' id='navbarNav'>
         <ul className='navbar-nav'>
-          <li className='nav-item'>Home</li>
-          <li className='nav-item'>Back</li>
+        <li>
+          <NavLink exact to='./dogs' className='nav-link'>
+            Home
+          </NavLink>
+        </li>
+         {dogLinks}
         </ul>
       </div>
     </nav>
