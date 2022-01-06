@@ -7,6 +7,23 @@ class Navbar extends Component {
       <a className='navbar-brand' href='#'>
         Dog App
       </a>
+      <button
+        className='navbar-toggler'
+        type='button'
+        data-toggle='collapse'
+        data-target='#navbarNav'
+        arial-controls='navbarNav'
+        arial-expanded='false'
+        arial-label='Toggle navigation'
+      >
+        <span className='navbar-toggle-icon'/>
+      </button>
+      <div className='collapse navbar-collapse'>
+        <ul className='navbar-nav'>
+          <li className='nav-item'>Home</li>
+          <li className='nav-item'>Back</li>
+        </ul>
+      </div>
     </nav>
     )
   }

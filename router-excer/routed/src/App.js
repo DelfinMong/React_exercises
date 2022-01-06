@@ -14,17 +14,19 @@ class App extends Component{
             <NavLink className={({ isActive }) => isActive? "active-link": ''} to='/dog'>Dog</NavLink>
             <NavLink className={({ isActive }) => isActive? "active-link": ''} to='/contact'>Contact</NavLink>
 
-            {/* <NavLink to='/'>About</NavLink>
-            <NavLink to='/dog'>Dog</NavLink>
-            <NavLink to='/contact'>Contact</NavLink> */}
+            {/* <Link to='/'>About</Link>
+                <Link to='/dog'>Dog</Link>
+                <Link to='/contact'>Contact</Link> */
+            }
 
             {/* <a href='/'>About</a>
-            <a href='/dog'>Dog</a>
-            <a href='/contact'>Contact</a> */}
+                <a href='/dog'>Dog</a>
+                <a href='/contact'>Contact</a> */
+            }
           </nav>
           <Routes>
             <Route exact path='/' element={<About/>} />
-            <Route path='/dog' element={<Dog/>} />
+            <Route path='/dog' element={<Dog name={'Muffins'}/>} />
             <Route path='/contact' element={<Contact/>} />
           </Routes>
       </div>
