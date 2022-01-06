@@ -1,32 +1,65 @@
-import React, { Component } from "react";
-import Food from "./Food";
-import Meal from './Meal';
-import Navbar from "./Navbar";
-import FoodSearch from "./FoodSearch";
-import { Route, Switch } from "react-router-dom";
-import "./App.css";
+import React, { Component} from "react";
+import DogList from "./DogList";
+import DogDetail from './DogDetail';
+import BootNavBar from './BootNavBar';
+import whiskey from './imgs/whiskey.jpg'
+import tubby from './imgs/tubby.jpg'
+import hazel from './imgs/hazel.jpg'
+import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
+  static defaultProps = {
+    dogs: [
+      {
+        name: "Whiskey",
+        age: 5,
+        src: whiskey,
+        facts: [
+          "Whiskey loves eating popcorn.",
+          "Whiskey is a terrible guard dog.",
+          "Whiskey wants to cuddle with you!"
+        ]
+      },
+      {
+        name: "Hazel",
+        age: 3,
+        src: hazel,
+        facts: [
+          "Hazel has soooo much energy!",
+          "Hazel is highly intelligent.",
+          "Hazel loves people more than dogs."
+        ]
+      },
+      {
+        name: "Tubby",
+        age: 4,
+        src: tubby,
+        facts: [
+          "Tubby is not the brightest dog",
+          "Tubby does not like walks or exercise.",
+          "Tubby loves eating food."
+        ]
+      }
+    ]
+  }
   render() {
+    const getDog = props => {
+      let name = props.match.params.name;
+      let currentDog = this.props.dogs.find(
+        dog => dog.name.toLowerCase() === name.toLowerCase()
+      );
+      return <DogDetail {...props} dog={currentDog} />
+    }
     return (
-      <div className='App'>
-      <Navbar />
-      <Switch>
-        <Route exact path='/' render={routeProps => <FoodSearch{...routeProps}/>}/>
-        <Route exact path="/food/:name" render={ routeProps => <Food {...routeProps} /> } />
-        <Route exact path='/food/:foodName/drink/:drinkName' component={Meal}/>
-        <Route render={() => <h1>ERROR NOT FOUND!!!</h1>}/>
-      </Switch>
-      </div>
+      <>
+        <BootNavBar />
+        <Switch>
+          <Route exact path='/dogs' render={ () => <DogList dogs={this.props.dogs}/>}/>
+          <Route exact path='/dogs/:name' render={getDog}/>
+        </Switch>
+      </>
     );
   }
 }
 
 export default App;
-
-// /food/:name    url parameter how to match something else.
-// 2 ways to render components. 
-// 1. component={ component name}  short cut
-// 2. render={ () => < component name />}/>  use for multiple props
-// exact match the route
-// limit route params to 2

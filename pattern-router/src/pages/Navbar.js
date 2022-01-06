@@ -6,11 +6,15 @@ class Navbar extends Component {
   constructor(props) {
     super(props);
     this.handleLogin = this.handleLogin.bind(this);
+    // this.handleBack = this.handleBack.bind(this);
   }
   handleLogin() {
     alert("LOGGED YOU IN!");
     this.props.history.push("/food/salmon");
   }
+  // handleBack(){
+  //   this.props.history.goBack();
+  // }
 
   render() {
     return (
