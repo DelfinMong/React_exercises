@@ -18,7 +18,7 @@ class Navbar extends Component {
       >
         <span className='navbar-toggle-icon'/>
       </button>
-      <div className='collapse navbar-collapse'>
+      <div className='collapse navbar-collapse' id='navbarNav'>
         <ul className='navbar-nav'>
           <li className='nav-item'>Home</li>
           <li className='nav-item'>Back</li>
